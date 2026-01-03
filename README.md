@@ -15,7 +15,7 @@ Zing は Data-Oriented Design (DoD) を徹底し、CSSOMとDOMツリーを「巨
 Zingは、Wasmの線形メモリ（Linear Memory）を極限まで効率的に使う設計になっています。
 ```mermaid
 graph LR
-    CSS[CSS Input] -->|Tokenizer| Atom[Atom Table (u32 IDs)]
+    CSS[CSS Input] -->|Tokenizer| Atom[Atom Table（u32 IDs）]
     DOM[DOM Input] -->|Flattener| FlatDOM[SoA DOM Tree]
     
     Atom --> Parser[Parser & Compiler]
@@ -25,7 +25,7 @@ graph LR
     VM --> Matcher
     
     Matcher -->|Bloom Filter| Reject[Early Rejection]
-    Matcher -->|Matched!| Compute[Style Computation (SIMD)]
+    Matcher -->|Matched!| Compute[Style Computation （SIMD）]
     
     Compute -->|u32 Arrays| Result[Computed Styles]
 ```
